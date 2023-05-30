@@ -8,7 +8,7 @@ RSS2023
 
 1. Clone this repo and its submodules:
 ```bash
-git clone https://github.com/JiahengHu/CausalMoMa.git --recursive`
+git clone https://github.com/JiahengHu/CausalMoMa.git --recursive
 ```
 
 2. Install the cloned `iGibson-CausalMoMa`, `Minigrid-CausalMoMa` and `sb3-CausalMoMa`, following the respective `README.md` instructions.
