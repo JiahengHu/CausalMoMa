@@ -40,7 +40,7 @@ class TrainingParams(AttrDict):
             self.__dict__[k] = v
         self.__dict__ = self._clean_dict(self.__dict__)
 
-        repo_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+        repo_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
         training_params = self.training_params
         if getattr(training_params, "load_inference", None) is not None:
             training_params.load_inference = \

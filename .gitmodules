@@ -1,0 +1,9 @@
+[submodule "iGibson-CausalMoMa"]
+	path = iGibson-CausalMoMa
+	url = https://github.com/JiahengHu/iGibson-CausalMoMa.git
+[submodule "sb3-CausalMoMa"]
+	path = sb3-CausalMoMa
+	url = https://github.com/JiahengHu/sb3-CausalMoMa.git
+[submodule "Minigrid-CausalMoMa"]
+	path = Minigrid-CausalMoMa
+	url = https://github.com/JiahengHu/Minigrid-CausalMoMa.git
