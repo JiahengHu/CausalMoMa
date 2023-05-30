@@ -1,0 +1,87 @@
+{
+    "info": "causal_inference_cmi_igibson_continuous",
+    "seed": 0,
+    "cuda_id": 0,
+    "domain": "igibson",
+    "igibson_reward_type": "continuous",
+    "mini_env_name": "",
+    "rb_path": "igibson_causal_data",
+    "train_mask": false,
+    "env_params": {
+        "env_name": "Causal",
+        "num_envs": 1
+    },
+    "training_params": {
+        "inference_algo": "cmi",
+        "object_level_obs": false,
+        "num_observation_steps": 1,
+        "load_inference": "",
+        "total_step": 40000,
+        "init_step": 0,
+        "collect_transitions": false,
+        "num_inference_opt_steps": 1,
+        "num_policy_opt_steps": 0,
+        "eval_freq": 25,
+        "saving_freq": 20000,
+        "plot_freq": 1000,
+        "replay_buffer_params": {
+            "capacity": 2000000,
+            "max_sample_time": 64,
+            "saving_freq": 0,
+            "prioritized_buffer": false,
+            "parallel_sample": true,
+            "prioritized_alpha": 10
+        }
+    },
+    "inference_params": {
+        "num_pred_steps": 1,
+        "batch_size": 64,
+        "lr": 1e-4,
+        "train_prop": 0.9,
+        "residual": false,
+        "log_std_min": -15,
+        "log_std_max": 30,
+        "grad_clip_norm": 20,
+        "detach_encoder": true,
+        "cmi_params": {
+            "feature_fc_dims": [128, 128],
+            "generative_fc_dims": [128, 128],
+            "causal_pred_reward_weight": 0.0,
+            "pred_diff_reward_weight": 1.0,
+            "causal_opt_freq": 10,
+            "eval_tau": 0.999,
+            "CMI_threshold": 0.12
+        }
+    },
+    "contrastive_params": {
+        "num_pred_steps": 1,
+        "batch_size": 32,
+        "lr": 3e-4,
+        "loss_type": "contrastive",
+        "gradient_through_all_samples": false,
+        "l2_reg_coef": 1e-3,
+        "num_negative_samples": 512,
+        "grad_clip_norm": 20,
+        "num_pred_samples": 16384,
+        "num_pred_iters": 3,
+        "pred_sigma_init": 0.33,
+        "pred_sigma_shrink": 0.5,
+        "modular_params": {
+            "fc_dims": [256, 256, 256]
+        },
+        "cmi_params": {
+            "learn_bo": false,
+            "dot_product_energy": true,
+            "aggregation": "max",
+            "train_all_masks": false,
+            "feature_fc_dims": [256, 128],
+            "enery_fc_dims": [128],
+            "mask_opt_freq": 1,
+            "full_opt_freq": 25,
+            "causal_opt_freq": 25,
+            "eval_num_negative_samples": 8192,
+            "eval_tau": 0.995,
+            "CMI_threshold": 0.01
+        }
+    }
+}
